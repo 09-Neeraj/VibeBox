@@ -1,86 +1,96 @@
 function Login() {
   return (
-    <div className="login-page">
-      <div className="main-container">
+    <div className="login-page min-h-screen bg-[linear-gradient(170deg,rgba(107,46,176,1)_42%,rgba(253,187,45,1)_100%)] flex items-center justify-center">
+      <div className="main-container  w-full max-w-7xl min-h-[650px] grid grid-cols-2 rounded-3xl overflow-hidden bg-[#130B1F] shadow-2xl ">
         {/* Left Section */}
-        <div className="left-section">
+        <div className="left-section text-[#FFFFFF] p-4">
           {/* logo */}
           <div className="logo">
-            <img src="/public/images/logo.png" alt="logo image" />
+            <img src="/images/logo.png" alt="logo image" height={150} width={250}/>
           </div>
 
           {/* heading */}
-          <div className="hero-content">
-            <h1>
+          <div className="pt-7 ml-7">
+            <h1 className="text-3xl font-semibold tracking-wide">
               Your <br/>
-              <span>Music</span> Library <br/>
+              <span className="text-[#7d32c7]">Music</span> Library <br/>
               Anywhere
             </h1>
 
             {/* Description */}
-            <p>
-              Discover, play and enjoy your favorite songs.
+            <p className="text-[#A99DB5] mt-3">
+              Discover, play and enjoy your <br/> favorite songs.
             </p>
           </div>
 
           {/* image */}
-          <div className="hero-image">
-            <img src="/public/images/headphone.png" alt="" />
+          <div className="ml-40">
+            <img src="/images/headphone.png" alt="" height={270} width={320}/>
           </div>
 
           {/* Feature */}
-          <div className="feature">
+          <div className="flex justify-around mt-6">
             {/* listen */}
-            <div className="listen">
-              <img src="" alt="" />
-              <h3>Listen</h3>
-              <p>Your favorite music</p>
+            <div className="flex gap-3">
+              <img src="/images/listen.png" alt="" className="rounded-full" width={35}/>
+              <div>
+                <h3>Listen</h3>
+                <p className="text-[#A99DB5]">Your favorite music</p>
+              </div>
+              
             </div>
 
             {/* Dicover */}
-            <div className="discover">
-              <img src="" alt="" />
-              <h3>Discover</h3>
-              <p>New artists</p>
+            <div className="flex gap-3">
+              <img src="/images/discover.png" alt="" height={10} width={40}/>
+              <div>
+                <h3>Discover</h3>
+                <p className="text-[#A99DB5]">New artists</p>
+              </div>
+              
             </div>
 
             {/* Enjoy */}
-            <div className="enjoy">
-              <img src="" alt="" />
-              <h3>Enjoy</h3>
-              <p>Anytime anywhere</p>
+            <div className="flex gap-3">
+              <img src="/images/enjoy.png" alt=""  width={40}/>
+              <div>
+                <h3>Enjoy</h3>
+                <p className="text-[#A99DB5]">Anytime anywhere</p>
+              </div>
+              
             </div>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="right-section">
-          <div className="welcome">
-            <h1>Welcome Back</h1>
-            <p>Login to continue VibeBox</p>
+        <div className="right-section bg-[#141412] text-[#FFFFFF] flex justify-center items-center">
+        <div className="">
+          <div className="mb-6">
+            <h1 className="text-2xl font-semibold tracking-wide mb-1">Welcome Back</h1>
+            <p className="text-[#A99DB5] tracking-normal">Login to continue to VibeBox</p>
           </div>
-        </div>
+        
 
-        {/* Login Form */}
-        <div className="login-form">
+         {/* Login Form */}
+        
           <form action="">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email"/>
+            <label htmlFor="email">Email</label><br/>
+            <input type="email" name="email" id="email" placeholder="Enter your email" className="bg-[#282828] w-80 p-2 text-sm rounded-sm mb-4 mt-0.5"/>
+            <br/>
+            <label htmlFor="password">Password</label><br/>
+            <input type="password" name="password" id="password" placeholder="Enter your password" className="bg-[#282828] w-80  rounded-sm p-2 text-sm mt-0.5"/>
 
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" />
+            <p className="text-[#a660ec] text-end mt-0.5 mb-4"><a href="#">Forget password?</a></p>
 
-            <p>Forget password?</p>
-
-            <button type="submit" className="login-btn">Login</button>
+            <button type="submit" className="bg-[#8138ca] w-80 h-9 rounded-lg hover:bg-[#A855F7]">Login</button>
           </form>
 
-          <p>-------- OR ----------</p>
+          <p className="text-[#A99DB5] text-sm mt-4 mb-4">----------------------------- OR --------------------------------</p>
 
-          <p>Don't have an account? <span>Register</span> </p>
+          <p className="text-center">Don't have an account? <span className="text-[#8138ca]"> <a href="#">Register</a></span> </p>
         </div>
       </div>
-
+      </div>
     </div>
   );
 }

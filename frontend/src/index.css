@@ -9,14 +9,11 @@
 
 html {
      scroll-behavior: smooth;
-     background-color: #050B19;
+  
    }
    
    body {
      margin: 0;
-     min-width: 320px;
      font-family: "Inter", sans-serif;
-     background-color: #050B19;
-     color: white;
    }
    
