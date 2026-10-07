@@ -11,7 +11,7 @@ function Login() {
 
           {/* heading */}
           <div className="pt-7 ml-7">
-            <h1 className="text-3xl font-semibold tracking-wide">
+            <h1 className="text-5xl font-semibold tracking-wide">
               Your <br/>
               <span className="text-[#7d32c7]">Music</span> Library <br/>
               Anywhere
@@ -80,14 +80,16 @@ function Login() {
             <label htmlFor="password">Password</label><br/>
             <input type="password" name="password" id="password" placeholder="Enter your password" className="bg-[#282828] w-80  rounded-sm p-2 text-sm mt-0.5"/>
 
-            <p className="text-[#a660ec] text-end mt-0.5 mb-4"><a href="#">Forget password?</a></p>
+            <p className="text-[#a660ec] hover:text-[#6407bb] text-end mt-0.5 mb-4"><a href="#">Forget password?</a></p>
 
-            <button type="submit" className="bg-[#8138ca] w-80 h-9 rounded-lg hover:bg-[#A855F7]">Login</button>
+            <button type="submit" className="bg-[#760be1] w-80 h-9 rounded-lg hover:bg-[#6407bb]">Login</button>
           </form>
 
           <p className="text-[#A99DB5] text-sm mt-4 mb-4">----------------------------- OR --------------------------------</p>
 
-          <p className="text-center">Don't have an account? <span className="text-[#8138ca]"> <a href="#">Register</a></span> </p>
+          <p className="text-center">Don't have an account? <span className="
+          text-[#8138ca] hover:text-[#6209ba]
+          "> <a href="/register">Register</a></span> </p>
         </div>
       </div>
       </div>
