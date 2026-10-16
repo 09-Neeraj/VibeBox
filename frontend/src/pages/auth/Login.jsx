@@ -1,4 +1,25 @@
+import { useState } from "react";
+import axios from "axios";
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+  
+    const response = await axios.post(
+      "http://localhost:4000/api/auth/login",
+      {
+        email,
+        password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+  
+    console.log(response.data);
+  };
   return (
     <div className="login-page min-h-screen bg-[linear-gradient(170deg,rgba(107,46,176,1)_42%,rgba(253,187,45,1)_100%)] flex items-center justify-center">
       <div className="main-container  w-full max-w-7xl min-h-[650px] grid grid-cols-2 rounded-3xl overflow-hidden bg-[#130B1F] shadow-2xl ">
@@ -73,12 +94,20 @@ function Login() {
 
          {/* Login Form */}
         
-          <form action="">
+          <form onSubmit={handleLogin}>
             <label htmlFor="email">Email</label><br/>
-            <input type="email" name="email" id="email" placeholder="Enter your email" className="bg-[#282828] w-80 p-2 text-sm rounded-sm mb-4 mt-0.5"/>
+            <input type="email" name="email" id="email" 
+                   placeholder="Enter your email" 
+                   value={email}
+                   onChange={(e)=>setEmail(e.target.value)}
+                   className="bg-[#282828] w-80 p-2 text-sm rounded-sm mb-4 mt-0.5"/>
             <br/>
             <label htmlFor="password">Password</label><br/>
-            <input type="password" name="password" id="password" placeholder="Enter your password" className="bg-[#282828] w-80  rounded-sm p-2 text-sm mt-0.5"/>
+            <input type="password" name="password" id="password" 
+                   placeholder="Enter your password" 
+                   value={password}
+                   onChange={(e)=> setPassword(e.target.value)}
+                   className="bg-[#282828] w-80  rounded-sm p-2 text-sm mt-0.5"/>
 
             <p className="text-[#a660ec] hover:text-[#6407bb] text-end mt-0.5 mb-4"><a href="#">Forget password?</a></p>
 

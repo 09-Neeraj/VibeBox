@@ -1,8 +1,36 @@
+import axios from "axios";
+import { useState } from "react";
 import { PiMusicNotesLight } from "react-icons/pi";
 import { HiOutlineHeart } from "react-icons/hi";
 import { SlPeople } from "react-icons/sl";
 
 function Register() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+  
+    console.log({
+      username,
+      email,
+      password,
+      confirmPassword,
+    });
+
+    const response = await axios.post(
+      "http://localhost:4000/api/auth/register",
+      {
+        username,
+        email,
+        password,
+      }
+    );
+    
+    console.log(response.data);
+  };
      return(
     <div className="bg-[#1e063e] h-screen  flex items-center justify-center">
       {/* Container */}
@@ -70,21 +98,33 @@ function Register() {
               <p className="text-[#A99DB5]">Join VibeBox and start your music journey </p>
             </div>
             {/* form */}
-            <form action="">
+            <form onSubmit={handleRegister}>
               <label htmlFor="username">Username</label><br />
-              <input type="text" placeholder="Enter your username"
-               className="bg-[#282828] w-90 p-2 text-sm rounded-sm mb-4 mt-0.5"/><br />
+              <input type="text"
+                     placeholder="Enter your username"
+                     value={username}
+                     onChange={(e) => setUsername(e.target.value)}
+                     className="bg-[#282828] w-90 p-2 text-sm rounded-sm mb-4 mt-0.5"/><br />
 
               <label htmlFor="email">Email</label><br />
-              <input type="email" placeholder="Enter your email"
-              className="bg-[#282828] w-90 p-2 text-sm rounded-sm mb-4 mt-0.5" /><br />
+              <input type="email" 
+                     placeholder="Enter your email"
+                     value={email}
+                     onChange={(e) => setEmail(e.target.value)}
+                     className="bg-[#282828] w-90 p-2 text-sm rounded-sm mb-4 mt-0.5" /><br />
 
               <label htmlFor="password">Password</label><br />
-              <input type="password" placeholder="Create a password"
-              className="bg-[#282828] w-90 p-2 text-sm rounded-sm mb-4 mt-0.5" /><br />
+              <input type="password" 
+                     placeholder="Create a password"
+                     value={password}
+                     onChange={(e) => setPassword(e.target.value)}
+                     className="bg-[#282828] w-90 p-2 text-sm rounded-sm mb-4 mt-0.5" /><br />
 
               <label htmlFor="confirpassword">Confirm Password</label><br />
-              <input type="password" placeholder="Confirm your password"
+              <input type="password" 
+                     placeholder="Confirm your password"
+                     value={confirmPassword}
+                     onChange={(e) => setConfirmPassword(e.target.value)}
               className="bg-[#282828] w-90 p-2 text-sm rounded-sm mb-4 mt-0.5" />
               <br />
               <button type="submit"
